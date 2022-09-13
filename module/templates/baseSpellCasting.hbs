@@ -1,0 +1,87 @@
+<style>
+  .extra_margin {
+    margin-bottom: 4px;
+  }
+  .spellClickable {
+    cursor: pointer;
+  }
+  .disable {
+    filter: grayscale(100%);
+  }
+</style>
+<div class="flexrow extra_margin">
+  <span class="flex1">Número de esferas:</span> <select id="numberOfSpheres" name="numberOfSpheres">
+  {{selectOptions dataModifiers.NUMBER_OF_SPHERES selected=numberOfSpheres}}
+</select>
+</div>
+
+<div class="flexrow extra_margin">
+  <span class="flex1">Esfera más alta</span> <select id="highestSphere" name="highestSphere">
+  {{selectOptions dataModifiers.HIGHEST_SPHERE selected=highestSphere}}
+</select>
+</div>
+
+<div class="flexrow extra_margin">
+  <span class="flex1">Número de objetivos (si aplica) <a href="#" id="extractNumberOfObjectives">Buscar objetivos</a></span> <select id="numberOfObjectives">
+  {{selectOptions dataModifiers.NUMBER_OF_TARGETS selected=numberOfObjectives}}
+</select>
+</div>
+
+<div class="flexrow extra_margin">
+  <span class="flex1">Duración del hechizo (si aplica)  </span> <select id="time">
+  {{selectOptions dataModifiers.DURATION selected=time}}
+</select>
+</div>
+
+<div class="flexrow extra_margin">
+  <span class="flex1">Distancia (si aplica) <a href="#" id="extractDistanceFromTargetsOrArea">Calcular distancia</a></span> <select id="distance">
+  {{selectOptions dataModifiers.DISTANCE selected=distance}}
+
+</select>
+</div>
+
+<div class="flexrow extra_margin">
+  <span class="flex1">Area de efecto (si aplica) <a href="#" id="extractEffectAreaFromLastArea">Buscar en última area</a></span> <select id="effectArea">
+  {{selectOptions dataModifiers.AREA selected=effectArea}}
+</select>
+</div>
+
+<div class="flexrow extra_margin">
+  <span class="flex1">Peso (si aplica)</span> <select id="weight">
+  {{selectOptions dataModifiers.WEIGHT selected=weight}}
+</select>
+</div>
+
+<div class="flexrow extra_margin">
+  <span class="flex1">Distancia con esfera de Correspondencia</span> <select id="distanceByCorrespondence">
+  {{selectOptions dataModifiers.DISTANCE_WITH_CORRESPONDENCE selected=distanceByCorrespondence}}
+</select>
+</div>
+
+<div class="flexrow extra_margin">
+  <span class="flex1">Tiempo con esfera de Tiempo</span> <select id="timeByTime">
+  {{selectOptions dataModifiers.TIME_WITH_TIME selected=timeByTime}}
+</select>
+</div>
+
+<div class="flexrow extra_margin">
+  Modificadores al vuelo
+  <textarea id="customModifiers"></textarea>
+</div>
+
+<input type="button" id="getModifiersFromSpell" value="Conseguir modificadores" />
+
+<table>
+  <tr>
+    <td><img src="icons/equipment/shield/heater-steel-segmented-purple.webp" class="spellClickable" id="addPhysicalShield" /></td>
+    <td><img src="icons/equipment/shield/heater-steel-segmented-purple.webp" class="spellClickable disable" id="removePhysicalShield" /></td>
+    <td><img src="icons/equipment/shield/heater-crystal-blue.webp" class="spellClickable" id="addMentalShield" /></td>
+    <td><img src="icons/equipment/shield/heater-crystal-blue.webp" class="spellClickable disable" id="removeMentalShield" /></td>
+    <td><img src="icons/weapons/swords/greatsword-crossguard-flanged.webp"  class="spellClickable" id="calculateDamageFromSpell"/></td>
+    <td><img src="icons/skills/movement/feet-winged-boots-glowing-yellow.webp" class="spellClickable" id="addSpeed" /></td>
+    <td><img src="icons/skills/movement/feet-winged-boots-glowing-yellow.webp" class="spellClickable disable" id="removeSpeed"  /></td>
+    <td><img src="Esquiva%20acrob%C3%A1tica.png" class="spellClickable" id="addKineticDodge"/></td>
+    <td><img src="Esquiva%20acrob%C3%A1tica.png" class="spellClickable disable" id="removeKineticDodge" /></td>
+    <td><img src="icons/magic/life/cross-worn-green.webp" class="spellClickable" id="calculateHealingFromSpell"/></td>
+  </tr>
+</table>
